@@ -1,4 +1,4 @@
-/* ================= RESET & VARIABLES ================= */
+
 :root {
   --primary: #6366f1;
   --primary-light: #818cf8;
@@ -52,7 +52,7 @@ body::before {
   z-index: -1;
 }
 
-/* ================= DARK MODE ================= */
+
 body.dark {
   background: linear-gradient(135deg, #020617, #0f172a, #020617);
 }
@@ -65,7 +65,7 @@ body.dark .card {
   background: rgba(2, 6, 23, 0.6);
 }
 
-/* ================= NAVBAR ================= */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -144,7 +144,7 @@ body.dark .card {
   box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.5);
 }
 
-/* ================= HERO ================= */
+
 .hero {
   padding: 160px 20px;
   text-align: center;
@@ -227,7 +227,7 @@ body.dark .card {
   }
 }
 
-/* ================= SECTIONS ================= */
+
 .section {
   padding: 100px 80px;
   position: relative;
@@ -278,14 +278,14 @@ body.dark .card {
   background: var(--gradient-1);
 }
 
-/* ================= GRID ================= */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
 }
 
-/* ================= GLASS CARD ================= */
+
 .card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
@@ -336,7 +336,7 @@ body.dark .card {
   box-shadow: 0 20px 30px -10px rgba(99, 102, 241, 0.5);
 }
 
-/* ================= CTA ================= */
+
 .cta-box {
   text-align: center;
   padding: 100px 60px;
@@ -383,7 +383,7 @@ body.dark .card {
   z-index: 1;
 }
 
-/* ================= CONTAINER ================= */
+
 .container {
   padding: 80px;
   min-height: 70vh;
@@ -408,7 +408,7 @@ body.dark .card {
   -webkit-text-fill-color: transparent;
 }
 
-/* ================= TOOLBAR ================= */
+
 .toolbar {
   display: flex;
   gap: 20px;
@@ -456,7 +456,7 @@ body.dark .card {
   color: var(--light);
 }
 
-/* ================= BUTTONS ================= */
+
 .btn {
   padding: 15px 35px;
   border-radius: 50px;
@@ -553,7 +553,7 @@ body.dark .card {
   pointer-events: none;
 }
 
-/* ================= FORM ================= */
+
 .form-card {
   max-width: 700px;
   margin: auto;
@@ -607,7 +607,7 @@ form textarea {
   box-shadow: 0 20px 30px -10px rgba(99, 102, 241, 0.5);
 }
 
-/* ================= STATS ================= */
+
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -664,7 +664,7 @@ form textarea {
   letter-spacing: 1px;
 }
 
-/* ================= CALENDAR ================= */
+
 .calendar {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
@@ -753,7 +753,6 @@ form textarea {
   opacity: 1;
 }
 
-/* ================= TOAST ================= */
 .toast {
   position: fixed;
   bottom: 40px;
@@ -792,7 +791,7 @@ form textarea {
   }
 }
 
-/* ================= MODAL ================= */
+
 .modal {
   display: none;
   position: fixed;
@@ -847,7 +846,7 @@ form textarea {
   justify-content: center;
 }
 
-/* ================= FOOTER ================= */
+
 .footer {
   text-align: center;
   padding: 40px;
@@ -879,7 +878,7 @@ form textarea {
   opacity: 1;
 }
 
-/* ================= ANIMATIONS ================= */
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -889,7 +888,7 @@ form textarea {
   animation: float 3s ease infinite;
 }
 
-/* ================= RESPONSIVE ================= */
+
 @media (max-width: 1200px) {
   .navbar {
     padding: 20px 40px;
@@ -999,7 +998,6 @@ form textarea {
   }
 }
 
-/* ================= SCROLLBAR ================= */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -1017,7 +1015,6 @@ form textarea {
   background: var(--gradient-2);
 }
 
-/* ================= UTILITY CLASSES ================= */
 .gradient-text {
   background: var(--gradient-1);
   -webkit-background-clip: text;

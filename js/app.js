@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-/* ================= STORAGE ================= */
+
 function getEvents() {
   return JSON.parse(localStorage.getItem("events")) || [];
 }
@@ -9,7 +9,7 @@ function saveEvents(events) {
   localStorage.setItem("events", JSON.stringify(events));
 }
 
-// Enhanced sample events with beautiful images
+
 function addSampleEvents() {
   const events = getEvents();
   if (events.length === 0) {
@@ -98,7 +98,6 @@ function addSampleEvents() {
 }
 addSampleEvents();
 
-/* ================= TOAST ================= */
 function showToast(msg, type = 'success') {
   const toast = document.getElementById("toast");
   if (toast) {
@@ -109,7 +108,6 @@ function showToast(msg, type = 'success') {
   }
 }
 
-/* ================= MODAL ================= */
 function confirmAction(message, callback) {
   const modal = document.getElementById("modal");
   if (!modal) return;
@@ -127,10 +125,8 @@ function confirmAction(message, callback) {
   };
 }
 
-/* ================= DARK MODE ================= */
 const toggle = document.getElementById("themeToggle");
 if (toggle) {
-  // Check for saved preference
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark');
     toggle.innerText = "☀️";
@@ -144,13 +140,11 @@ if (toggle) {
   };
 }
 
-/* ================= CREATE EVENT ================= */
 const form = document.getElementById("eventForm");
 const imageInput = document.getElementById("imageInput");
 const previewImage = document.getElementById("previewImage");
 
 if (form) {
-  // Initialize form elements
   const name = document.getElementById("name");
   const date = document.getElementById("date");
   const location = document.getElementById("location");
@@ -160,7 +154,6 @@ if (form) {
   const description = document.getElementById("description");
   const category = document.getElementById("category");
 
-  // Set min date to today
   if (date) {
     const today = new Date().toISOString().split('T')[0];
     date.min = today;
@@ -206,14 +199,12 @@ if (form) {
     form.reset();
     previewImage.style.display = "none";
     
-    // Redirect to events page after 1.5 seconds
     setTimeout(() => {
       window.location.href = "events.html";
     }, 1500);
   });
 }
 
-/* ================= EVENTS PAGE ================= */
 const container = document.getElementById("eventsContainer");
 const searchInput = document.getElementById("searchInput");
 const sortSelect = document.getElementById("sortSelect");
@@ -270,7 +261,6 @@ if (container) {
     });
   };
 
-  // Search functionality
   if (searchInput) {
     searchInput.addEventListener("input", e => {
       const searchTerm = e.target.value.toLowerCase();
@@ -284,7 +274,6 @@ if (container) {
     });
   }
 
-  // Sort functionality
   if (sortSelect) {
     sortSelect.addEventListener("change", e => {
       let sorted = [...events];
@@ -306,7 +295,6 @@ if (container) {
     });
   }
 
-  // Category filter
   if (categoryFilter) {
     categoryFilter.addEventListener("change", e => {
       const category = e.target.value;
@@ -320,7 +308,6 @@ if (container) {
   }
 }
 
-/* ================= DETAILS PAGE ================= */
 const detailsContainer = document.getElementById("detailsContainer");
 
 if (detailsContainer) {
@@ -406,12 +393,12 @@ if (detailsContainer) {
   }
 }
 
-/* ================= DASHBOARD ================= */
+
 if (document.getElementById("totalEvents")) {
   const events = getEvents();
   const today = new Date();
 
-  // Update stats with animations
+  
   animateNumber("totalEvents", 0, events.length);
   animateNumber("upcoming", 0, events.filter(e => new Date(e.date) >= today).length);
   animateNumber("past", 0, events.filter(e => new Date(e.date) < today).length);
@@ -419,7 +406,7 @@ if (document.getElementById("totalEvents")) {
   const totalRevenue = events.reduce((sum, e) => sum + (e.price * e.booked), 0);
   animateNumber("totalRevenue", 0, totalRevenue, true);
 
-  // Recent events list with categories
+  
   const list = document.getElementById("dashboardList");
   if (list) {
     const recentEvents = [...events].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 4);
@@ -444,7 +431,7 @@ if (document.getElementById("totalEvents")) {
     }
   }
 
-  // Category distribution
+  
   const categoryStats = document.getElementById("categoryStats");
   if (categoryStats) {
     const categories = {};
@@ -463,7 +450,7 @@ if (document.getElementById("totalEvents")) {
   }
 }
 
-/* ================= CALENDAR ================= */
+
 const grid = document.getElementById("calendarGrid");
 const prevMonth = document.getElementById("prevMonth");
 const nextMonth = document.getElementById("nextMonth");
@@ -476,7 +463,7 @@ if (grid) {
   function renderCalendar() {
     grid.innerHTML = "";
     
-    // Add weekday headers with gradient
+
     weekdays.forEach(day => {
       grid.innerHTML += `<div class="weekday">${day}</div>`;
     });
@@ -490,12 +477,12 @@ if (grid) {
     const daysInMonth = new Date(year, month + 1, 0).getDate();
     const events = getEvents();
 
-    // Empty cells for days before month starts
+
     for (let i = 0; i < firstDay; i++) {
       grid.innerHTML += "<div></div>";
     }
 
-    // Fill in the days
+
     for (let d = 1; d <= daysInMonth; d++) {
       const dateStr = year + "-" + String(month + 1).padStart(2, "0") + "-" + String(d).padStart(2, "0");
       const dayEvents = events.filter(e => e.date === dateStr);
@@ -543,7 +530,7 @@ if (grid) {
   renderCalendar();
 }
 
-/* ================= FEATURED EVENTS ON HOMEPAGE ================= */
+
 const featuredContainer = document.getElementById("featuredEvents");
 if (featuredContainer) {
   const events = getEvents();
@@ -563,7 +550,7 @@ if (featuredContainer) {
   });
 }
 
-/* ================= HELPER FUNCTIONS ================= */
+
 function formatDate(dateString) {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   return new Date(dateString).toLocaleDateString(undefined, options);
@@ -585,7 +572,7 @@ function animateNumber(elementId, start, end, isCurrency = false) {
   }, 20);
 }
 
-// Make functions globally available
+
 window.showToast = showToast;
 window.confirmAction = confirmAction;
 window.formatDate = formatDate;
