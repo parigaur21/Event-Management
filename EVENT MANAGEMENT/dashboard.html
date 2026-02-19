@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | EventFlow</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <span>✨</span> Event<span>Flow</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="create.html">Create</a>
+    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="calendar.html">Calendar</a>
+    <button id="themeToggle" class="btn-outline small-btn">🌙</button>
+  </nav>
+</header>
+
+<section class="container">
+  <h2 class="page-title">Dashboard Overview</h2>
+
+  <div class="stats">
+    <div class="card stat-card">
+      <h3 id="totalEvents">0</h3>
+      <p>Total Events</p>
+    </div>
+
+    <div class="card stat-card">
+      <h3 id="upcoming">0</h3>
+      <p>Upcoming Events</p>
+    </div>
+
+    <div class="card stat-card">
+      <h3 id="past">0</h3>
+      <p>Past Events</p>
+    </div>
+
+    <div class="card stat-card">
+      <h3 id="totalRevenue">$0</h3>
+      <p>Total Revenue</p>
+    </div>
+  </div>
+
+  <div class="grid" style="grid-template-columns: 2fr 1fr;">
+    <div class="card">
+      <h3 style="margin-bottom: 30px; font-size: 24px;">📊 Recent Events</h3>
+      <div id="dashboardList" class="grid" style="grid-template-columns: 1fr 1fr;"></div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-bottom: 30px; font-size: 24px;">📈 Category Distribution</h3>
+      <div id="categoryStats"></div>
+      
+      <h3 style="margin: 40px 0 20px; font-size: 24px;">⚡ Quick Actions</h3>
+      <a href="create.html" class="btn full-btn" style="margin-bottom: 10px;">+ Create New Event</a>
+      <a href="events.html" class="btn-outline full-btn">View All Events</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>✨ EventFlow - Making events memorable since 2026</p>
+</footer>
+
+<div id="toast" class="toast"></div>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <p id="modalMessage"></p>
+    <div class="modal-actions">
+      <button id="confirmBtn" class="btn">Yes</button>
+      <button id="cancelBtn" class="btn-outline">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

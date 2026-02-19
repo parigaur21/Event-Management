@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventFlow | Where Events Come to Life</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <span>✨</span> Event<span>Flow</span>
+  </div>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="events.html">Events</a>
+    <a href="create.html">Create</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="calendar.html">Calendar</a>
+    <button id="themeToggle" class="btn-outline small-btn">🌙</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Where Events Come to Life</h1>
+    <p>Create stunning events, manage tickets, and connect with your audience - all in one beautiful platform</p>
+    <div class="hero-buttons">
+      <a href="create.html" class="btn">Start Free Trial</a>
+      <a href="events.html" class="btn-outline">Explore Events</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Why EventFlow?</h2>
+  <div class="grid">
+    <div class="card">
+      <div style="font-size: 48px; margin-bottom: 20px;">✨</div>
+      <h3>Beautiful Design</h3>
+      <p>Stunning, modern interface that makes event management a pleasure, not a chore.</p>
+    </div>
+    <div class="card">
+      <div style="font-size: 48px; margin-bottom: 20px;">🚀</div>
+      <h3>Lightning Fast</h3>
+      <p>Create and manage events in seconds with our intuitive, streamlined workflow.</p>
+    </div>
+    <div class="card">
+      <div style="font-size: 48px; margin-bottom: 20px;">📊</div>
+      <h3>Powerful Analytics</h3>
+      <p>Get real-time insights into your events with beautiful, easy-to-understand dashboards.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-section">
+  <h2 class="section-title">Featured Events</h2>
+  <div class="grid" id="featuredEvents"></div>
+  <div style="text-align: center; margin-top: 50px;">
+    <a href="events.html" class="btn-outline">View All Events →</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="cta-box">
+    <h2 style="font-size: 48px; margin-bottom: 20px;">Ready to Create Magic?</h2>
+    <p style="font-size: 20px; margin-bottom: 30px;">Join thousands of event organizers who trust EventFlow</p>
+    <a href="create.html" class="btn" style="font-size: 18px; padding: 18px 50px;">Get Started Now</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>✨ EventFlow - Making events memorable since 2026</p>
+  <p style="margin-top: 15px; font-size: 14px; opacity: 0.7;">Created with 💜 for event organizers everywhere</p>
+</footer>
+
+<div id="toast" class="toast"></div>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <p id="modalMessage"></p>
+    <div class="modal-actions">
+      <button id="confirmBtn" class="btn">Yes</button>
+      <button id="cancelBtn" class="btn-outline">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

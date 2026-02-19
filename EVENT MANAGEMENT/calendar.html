@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar | EventFlow</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <span>✨</span> Event<span>Flow</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="create.html">Create</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="calendar.html" class="active">Calendar</a>
+    <button id="themeToggle" class="btn-outline small-btn">🌙</button>
+  </nav>
+</header>
+
+<section class="container">
+  <h2 class="page-title">Event Calendar</h2>
+
+  <div class="calendar">
+    <div class="calendar-header">
+      <button id="prevMonth" class="btn">← Previous</button>
+      <h3 id="monthYear"></h3>
+      <button id="nextMonth" class="btn">Next →</button>
+    </div>
+
+    <div class="calendar-grid" id="calendarGrid"></div>
+  </div>
+  
+  <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 40px;">
+    <div class="card">
+      <h3>📅 Legend</h3>
+      <p><span style="display: inline-block; width: 20px; height: 20px; background: linear-gradient(135deg, #ec4899, #6366f1); border-radius: 5px; margin-right: 10px;"></span> Days with events</p>
+      <p style="margin-top: 10px;">Click on any day to see events scheduled</p>
+    </div>
+    
+    <div class="card">
+      <h3>🎯 Upcoming This Month</h3>
+      <div id="monthlyHighlights"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>✨ EventFlow - Making events memorable since 2026</p>
+</footer>
+
+<div id="toast" class="toast"></div>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <p id="modalMessage"></p>
+    <div class="modal-actions">
+      <button id="confirmBtn" class="btn">Yes</button>
+      <button id="cancelBtn" class="btn-outline">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
